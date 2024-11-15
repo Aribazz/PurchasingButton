@@ -4,6 +4,92 @@ body {
     padding: 20px;
     text-align: center;
 }
+h2{
+    color: rgb(132, 97, 23);
+}
+
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2b0909;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+.imageIcon{
+    width: 20%;
+    height: 50px;
+}
+
+/* Landing Section */
+.landing {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(blue);
+}
+
+/* Products Section */
+.products {
+    padding: 2rem;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.add-to-cart {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Cart Section */
+.cart {
+    padding: 2rem;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    padding: 0.5rem 0;
+}
+
 
 img {
     width: 350px;
@@ -28,4 +114,26 @@ button {
 #error {
     color: red;
     font-weight: 200;
+}
+.DesignBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #2b0909;
+    padding: 96px 36px;
+    color:white
+}
+.ParaBody{
+    font-weight: 800;
+    font-size: 90px;
+    
+}
+.ParaOne{
+    text-align: center;
+    padding: 64px 32px;
+}
+.input{
+    outline: none;
+    border: none;
+    padding:0px 56px;
 }

@@ -3,10 +3,65 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <nav class="navbar">
+            <img class="imageIcon" src="./image/Approval.png" alt="Icon" />
+            <ul>
+                <li><a href="#landing">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#cart">Cart</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Landing Section -->
+        <section id="landing" class="landing">
+            <h2>Welcome to the Shoe Store</h2>
+            <p>Find the best shoes at unbeatable prices!</p>
+        </section>
+    
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <h2>Shoes</h2>
+            <div class="product-list">
+                <!-- Example Product -->
+                <div class="product" data-id="1" data-name="Running Shoes" data-price="50">
+                    <h3>Running Shoes</h3>
+                    <p>Price: $50</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product" data-id="2" data-name="Basketball Shoes" data-price="80">
+                    <h3>Basketball Shoes</h3>
+                    <p>Price: $80</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Cart Section -->
+        <section id="cart" class="cart">
+            <h2>Your Cart</h2>
+            <ul class="cart-items"></ul>
+            <p class="total">Total: $<span id="total-amount">0</span></p>
+        </section>
+    
+        
+
         <img src="image/nike.jpg" alt="Nike shoe">
         <p>Nike shoe</p>
         <button onclick="clicked()">Purchase - $149</button>
         <button onclick="buy()">Purchase - $149</button>
+
+        <div class="DesignBody">
+            <div>
+                <h1 class="ParaBody">Want Design updates sent straight to your inbox?</h1>
+            </div>
+            <div>
+                <input id="userInput" class="input" placeholder="We saved a spot for your email" type="email" name="name" />
+                <button id="sendButton">Sent</button>
+            </div>
+            <div>
+                <p class="ParaOne">By clicking send you’ll receive occasional emails from Spotify Design. You always have the choice to unsubscribe within every email you receive.</p>
+            </div>
+        </div>
 
         <p id="error"></p>
         <script src="index.js"></script>

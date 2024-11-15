@@ -60,5 +60,82 @@ function buy() {
 
 function clicked() {
     console.log("button clicked") 
-    para.innerText = "Try Purchasing the next item."  
+    para.innerText = "This product will be available(Try check back)"  
 }
+
+// ADDITIONAL WORKS
+// Select elements
+const cartItems = document.querySelector('.cart-items');
+const totalAmount = document.getElementById('total-amount');
+
+// Array to store cart data
+let cart = [];
+
+// Add event listeners to 'Add to Cart' buttons
+document.querySelectorAll('.add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+        const product = button.closest('.product');
+        const id = product.dataset.id;
+        const name = product.dataset.name;
+        const price = parseFloat(product.dataset.price);
+
+        // Add product to cart
+        const existingProduct = cart.find((item) => item.id === id);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push({ id, name, price, quantity: 1 });
+        }
+
+        updateCart();
+    });
+});
+
+// Function to update cart
+function updateCart() {
+    // Clear cart display
+    cartItems.innerHTML = '';
+
+    // Update cart display
+    let total = 0;
+    cart.forEach((item) => {
+        total += item.price * item.quantity;
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+        cartItems.appendChild(listItem);
+    });
+
+    // Update total
+    totalAmount.textContent = total.toFixed(2);
+}
+
+// INPUT SECTION
+const sendButton = document.getElementById("sendButton");
+const Input = document.getElementById("userInput");
+
+// Array to temporarily store data
+const storedData = [];
+
+// Function to store data and display it
+function storeData(data) {
+    storedData.push(data);
+
+        // Update the displayed list
+        const listItem = document.createElement('li');
+        listItem.textContent = data;
+    }
+    
+
+// Event Listener for the Send Button
+sendButton.addEventListener('click', () => {
+    const inputData = Input.value.trim(); // Get the input value and trim whitespace
+
+    if (inputData) {
+        storeData(inputData); // Store the data locally
+        // sendDataToDatabase(inputData); // Send the data to the database
+        Input.value = ''; // Clear the input field
+    } else {
+        alert('Please enter some data before sending!');
+    }
+});
